@@ -1,4 +1,5 @@
 import Notification from './classes/Notification.js';
+import AdminCitas from './classes/AdminCitas.js';
 import { pacienteInput, propietarioInput, emailInput, telefonoInput, fechaInput, formulario, btnEditar } from './selectors.js'
 import { datosCita, submitCita } from './functions.js'
 
