@@ -1,4 +1,4 @@
-import Notificacion from './classes/Notificacion.js';
+import Notification from './classes/Notificacion.js';
 import { pacienteInput, propietarioInput, emailInput, telefonoInput, fechaInput, formulario, btnEditar } from './selectors.js'
 import { datosCita, submitCita } from './functions.js'
 
