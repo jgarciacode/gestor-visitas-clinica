@@ -1,3 +1,6 @@
+import { citaObj, editando } from './variables.js';
+import { pacienteInput, propietarioInput, emailInput, telefonoInput, fechaInput, sintomasInput, formularioInput } from './selectors.js';
+
 export function cargarEdicion(cita) {
     Object.assign(citaObj, cita);
 

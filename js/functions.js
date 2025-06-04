@@ -14,24 +14,35 @@ export function submitCita(e) {
     e.preventDefault();
 
     //Validar campos
-    console.log(citaObj);
-    if (Object.values(citaObj).some(valor => valor.trim() === '')) {
-        new Notificacion({
-            texto: 'Todos los campos son obligatorios',
-            tipo: 'error'
-        });
-        return;
-    }
+    // console.log(citaObj);
+    // if (Object.values(citaObj).some(valor => valor.trim() === '')) {
+    //     new Notification({
+    //         texto: 'Todos los campos son obligatorios',
+    //         tipo: 'error'
+    //     });
+    //     return;
+    // }
 
+    //Modificamos el código para que se comprueben todos los campos excepto el campo ID del objeto
+    //ya que este siempre tendra valor
+    const campos = ['paciente', 'propietario', 'email', 'telefono', 'fecha', 'sintomas'];
+    if (campos.some(campo => citaObj[campo].trim() === '')) {
+        new Notification({
+             texto: 'Todos los campos son obligatorios',
+             tipo: 'error'
+         });
+         return;
+    }
+    console.log(editando.value);
     if (editando.value) {
         citas.editar({ ...citaObj })
-        new Notificacion({
+        new Notification({
             texto: 'Paciente modificado',
             tipo: 'exito'
         })
     } else {
         citas.agregarCita({ ...citaObj })
-        new Notificacion({
+        new Notification({
             texto: 'Paciente registrado correctamente',
             tipo: 'exito'
         })
